@@ -1,0 +1,13 @@
+#!/bin/bash
+
+if [ $# -eq 0 ]; then
+    echo "Usage: $0 YOUR SEARCH TERMS"
+    exit 1
+fi
+
+for x in $@ ; do
+    q="$q+$x"
+done
+q=${q:1}
+
+open "https://google.com/search?q=$q"
